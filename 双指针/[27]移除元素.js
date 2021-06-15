@@ -5,16 +5,16 @@
  */
 var removeElement = function(nums, val) {
     if (nums.length === 0) return nums
-    let slow = 0, fast = 0
-    while (fast <= nums.length - 1) {
-        if (nums[fast] !== val) {
-            nums[slow] = nums[fast]
-            slow++
+    let left = 0, right = 0
+    while (right < nums.length) {
+        if (nums[right] !== val) {
+            nums[left] = nums[right]
+            left++
         }
-        fast++
+        right++
     }
-    return slow
+    return left
 };
 
-let r = removeElement([], 2)
+let r = removeElement([3,2,2,3], 3)
 console.log(r)
